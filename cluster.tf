@@ -8,7 +8,7 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(module.gke-cluster.ca_certificate)
 }
 
-//// ------ NEW WAY -------
+  
 # GKE cluster
 resource "google_container_cluster" "primary" {
   name     = "my-gke"
