@@ -11,7 +11,7 @@ provider "kubernetes" {
 //// ------ NEW WAY -------
 # GKE cluster
 resource "google_container_cluster" "primary" {
-  name     = "${var.project}-gke"
+  name     = "my-gke"
   project  = var.project
   location = var.region
 
@@ -46,7 +46,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
     preemptible  = true
     machine_type = "e2-small"
-    tags         = ["gke-node", "${var.project}-gke"]
+    tags         = ["gke-node"]
     metadata = {
       disable-legacy-endpoints = "true"
     }
